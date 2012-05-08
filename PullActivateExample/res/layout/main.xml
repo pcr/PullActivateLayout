@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pcr="http://schemas.android.com/apk/res/com.pcr.android.ui"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.pcr.android.widget.PullActivateLayout
+        android:id="@+id/pull_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#f5f5f5"
+        pcr:actionViewId="@id/action_view"
+        pcr:toolViewId="@id/tool_view" 
+        android:scrollbars="vertical">
+
+        <include
+            android:id="@id/action_view"
+            layout="@layout/refresh_layout" />
+
+        <include
+            android:id="@id/tool_view"
+            layout="@layout/tool_layout" />
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+    </com.pcr.android.widget.PullActivateLayout>
+
+</FrameLayout>
