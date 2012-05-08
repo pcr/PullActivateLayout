@@ -1,0 +1,31 @@
+PullActivateLayout - A pull to refresh Layout on Android
+
+The project designed a layout base on FrameLayout to implement pull to refresh 
+feature on android. I wish it can support any of standard view in Framework as 
+its child.
+
+
+If you found some bugs or wish the layout can support more features, please:
+
+Submit it to issues list
+Contact me by Email: pcrxjxj@gmail.com
+
+If you want to get the source code or add to team, you can send a request to me.
+But I don't ensure to provide the source for every request, except the request 
+come from the person who owned a valuable open source project.
+
+===============================================================================
+[Latest release]
+Version 0.1
+Project Package
+Description: Contain a layout library project and an Example project.
+File: V0.1.zip
+
+Environment:
+Project is create on:
+
+Eclipse Indigo release
+ADT v18.0.0
+Android SDK Tools V19
+Android SDK Platform-tools V11
+Android 1.6(API4) SDK Platform V3
