@@ -29,9 +29,12 @@ import android.text.format.DateFormat;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -42,7 +45,8 @@ import java.util.Date;
  * 
  * @author PCR
  */
-public class ExampleActivity extends ListActivity implements OnPullListener, OnPullStateListener {
+public class ExampleActivity extends ListActivity implements OnPullListener, OnPullStateListener,
+		OnItemClickListener {
 	/* Handler message id */
 	private final static int MSG_LOADING = 1;
 	private final static int MSG_LOADED = 2;
@@ -99,30 +103,14 @@ public class ExampleActivity extends ListActivity implements OnPullListener, OnP
 
 		mTimeText.setText(R.string.note_not_update);
 		mActionText.setText(R.string.note_pull_down);
+		getListView().setOnItemClickListener(this);
 	}
 
 	private void initData() {
 		ArrayList<String> data = new ArrayList<String>();
-		data.add("1");
-		data.add("2");
-		data.add("3");
-		data.add("4");
-		data.add("5");
-		data.add("6");
-		data.add("7");
-		data.add("8");
-		data.add("9");
-		data.add("0");
-		data.add("1");
-		data.add("2");
-		data.add("3");
-		data.add("4");
-		data.add("5");
-		data.add("6");
-		data.add("7");
-		data.add("8");
-		data.add("9");
-		data.add("0");
+		for (int i = 0; i < 20; i++) {
+			data.add(String.format("Item %d", i));
+		}
 
 		ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
 				android.R.id.text1, data);
@@ -193,5 +181,10 @@ public class ExampleActivity extends ListActivity implements OnPullListener, OnP
 	@Override
 	public void onHide() {
 
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		Toast.makeText(this, "Item " + position + " Clicked", Toast.LENGTH_SHORT).show();
 	}
 }
